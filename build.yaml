@@ -1,0 +1,14 @@
+builders:
+    djson_builder:
+        import: "package:json_serializable_helper/builder_factory.dart"
+        builder_factories: ["getBuilder"]
+        build_extensions: {".json": [".dart"]}
+        auto_apply: dependents
+        build_to: source
+        applies_builders: ['json_serializable']
+        runs_before: [ "json_serializable" ]
+
+global_options:
+    djson_builder:
+        runs_before:
+            - json_serializable

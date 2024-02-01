@@ -1,5 +1,5 @@
 By adding this package to your project, you can directly use json files as the input of the 
-json_serializable package.
+[json_serializable](https://pub.dev/packages/json_serializable) package.
 
 <img src="diagram.jpeg"/>
 

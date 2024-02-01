@@ -1,3 +1,5 @@
+## [![Pub Version](https://img.shields.io/pub/v/json_serializable_helper)](https://pub.dev/packages/json_serializable_helper) [![codecov](https://codecov.io/gh/meysammahfouzi/json_serializable_helper/graph/badge.svg?token=JC7QQUSQE7)](https://codecov.io/gh/meysammahfouzi/json_serializable_helper)
+
 By adding this package to your project, you can directly use json files as the input of the 
 [json_serializable](https://pub.dev/packages/json_serializable) package.
 

@@ -1,6 +1,6 @@
 name: json_serializable_helper
 description: A builder to generate json_serializable classes from json files.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/meysammahfouzi/json_serializable_helper
 
 environment:

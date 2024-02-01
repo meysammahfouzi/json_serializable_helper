@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:dart_style/dart_style.dart';
 
 import 'common.dart';
 import 'keywords.dart';
@@ -29,7 +28,7 @@ Map<String, String> generateDartClasses(String className, String jsonString,
       mergedFileContent += fileContent;
     });
     generatedFiles.clear();
-    generatedFiles[firstFileName] = DartFormatter().format(mergedFileContent);
+    generatedFiles[firstFileName] = mergedFileContent;
   }
 
   return generatedFiles;

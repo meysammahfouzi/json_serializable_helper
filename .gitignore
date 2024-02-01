@@ -8,3 +8,4 @@ pubspec.lock
 
 .idea/
 /test/coverage_helper_test.dart
+coverage

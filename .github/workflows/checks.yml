@@ -21,7 +21,7 @@ jobs:
       - name: Analyze
         run: flutter analyze
       - name: Check formatting
-        run: flutter format --set-exit-if-changed .
+        run: dart format --set-exit-if-changed .
       - name: Generate coverage helper script file
         run: ./generate_test_coverage_helper.sh json_serializable_helper
       - name: Run tests

@@ -139,7 +139,7 @@ in your project, and then by running the same command above, the corresponding d
 Add `json_serializable` and `json_serializable_helper` dependencies to your `pubspec.yaml` file:
 
 ```yaml
-dependencies:
+dev_dependencies:
   json_serializable: ^6.7.1
   json_serializable_helper: ^1.0.0
 ```

@@ -165,4 +165,5 @@ This will generate the `person.dart` and `person.g.dart` files next to your `per
 
 ## Contribution
 
-If you find a bug or want to add a feature, please create an issue or a pull request. Thank you!
+If you find a bug or want to add a feature, please create an issue or a pull request.   
+Thank you!

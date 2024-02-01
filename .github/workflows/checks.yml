@@ -7,29 +7,44 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
       - name: Check out repository code
         uses: actions/checkout@v2
+
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - name: Install and set Flutter version
-        uses: subosito/flutter-action@v2.12.0
+
+      - name: Setup Dart environment
+        uses: dart-lang/setup-dart@v1.6.2
+
       - name: Restore packages
-        run: flutter pub get
+        run: dart pub get
+
       - name: Analyze
-        run: flutter analyze
+        run: dart analyze
+
       - name: Check formatting
         run: dart format --set-exit-if-changed .
+
       - name: Generate coverage helper script file
         run: ./generate_test_coverage_helper.sh json_serializable_helper
+
       - name: Run tests
-        run: flutter test --coverage
+        run: dart test --coverage=./coverage/
+
+      - name: Install Dart Coverage Tool
+        run: dart pub global activate coverage
+
+      - name: Generate lcov.info from coverage data
+        run: |
+          dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --packages=.packages --report-on=lib
+
       - name: Install lcov
         run: sudo apt-get install -y lcov
+
       - name: Remove generated files from code coverage report
         run: lcov --remove coverage/lcov.info 'lib/*/*.freezed.dart' 'lib/*/*.g.dart' 'lib/*/*.part.dart' 'lib/generated/*.dart' 'lib/generated/*/*.dart' -o coverage/lcov.info
+
       - name: Upload coverage to codecov
         uses: codecov/codecov-action@v3
         with:

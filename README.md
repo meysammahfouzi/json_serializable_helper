@@ -1,7 +1,7 @@
 By adding this package to your project, you can directly use json files as the input of the 
 [json_serializable](https://pub.dev/packages/json_serializable) package.
 
-<img src="https://github.com/meysammahfouzi/json_serializable_helper/blob/main/diagram.jpeg"/>
+![Diagram](https://github.com/meysammahfouzi/json_serializable_helper/raw/main/diagram.jpeg "json_serializable_helper")
 
 ## Features
 
@@ -163,6 +163,6 @@ dart run build_runner build --delete-conflicting-outputs
 
 This will generate the `person.dart` and `person.g.dart` files next to your `person.json` file.
 
-# Contribution
+## Contribution
 
 If you find a bug or want to add a feature, please create an issue or a pull request. Thank you!

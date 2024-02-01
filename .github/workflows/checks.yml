@@ -15,7 +15,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: Install and set Flutter version
-        uses: subosito/flutter-action@v1.4.0
+        uses: subosito/flutter-action@v2.12.0
       - name: Restore packages
         run: flutter pub get
       - name: Analyze

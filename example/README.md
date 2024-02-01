@@ -41,4 +41,10 @@ global_options:
       json_path: "lib/models"
 ```
 
-Run `flutter pub run build_runner build` to generate the `person.dart` and `person.g.dart` files.
+Now run the following command to generate the dart classes:
+
+```bash
+dart run build_runner build --delete-conflicting-outputs
+```
+
+This will generate the `person.dart` and `person.g.dart` files next to your `person.json` file.

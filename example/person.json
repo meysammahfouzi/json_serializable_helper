@@ -1,0 +1,16 @@
+{
+  "name": "John Doe",
+  "age": 30,
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "country": "USA"
+  },
+  "job": {
+    "title": "Software Engineer",
+    "company": {
+      "name": "TechCorp",
+      "industry": "Technology"
+    }
+  }
+}

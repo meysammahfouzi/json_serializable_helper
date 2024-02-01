@@ -9,7 +9,7 @@ class JsonSerializableHelperBuilder implements Builder {
   JsonSerializableHelperBuilder(this.options);
   final BuilderOptions options;
 
-  String get name => 'json_builder';
+  String get name => 'json_serializable_helper';
 
   @override
   Map<String, List<String>> get buildExtensions => const <String, List<String>>{
@@ -18,10 +18,16 @@ class JsonSerializableHelperBuilder implements Builder {
 
   @override
   Future<void> build(BuildStep buildStep) async {
+    if (options.config['json_path'] == null) {
+      return;
+    }
+
+    if (!buildStep.inputId.path.startsWith(options.config['json_path'])) {
+      return;
+    }
+
     // Read the JSON file
-    var inputFilePath = buildStep.inputId.path;
-    print(
-        'json_serializer_helper build started for $inputFilePath with buildStep.inputId: ${buildStep.inputId}');
+    print('json_serializer_helper build started for ${buildStep.inputId.path}');
 
     final jsonString = await buildStep.readAsString(buildStep.inputId);
 
